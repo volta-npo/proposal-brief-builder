@@ -7,12 +7,12 @@
 ![Volta OSS](https://img.shields.io/badge/Volta%20OSS-release%20ready-16a34a?style=for-the-badge)
 ![Mission](https://img.shields.io/badge/Mission-digital%20equity-16a34a?style=for-the-badge)
 ![Runtime](https://img.shields.io/badge/Runtime-local%20first-86efac?style=for-the-badge)
-![Tests](https://img.shields.io/badge/Tests-25%20passing-111827?style=for-the-badge)
+![Tests](https://img.shields.io/badge/Tests-29%20passing-111827?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-f59e0b?style=for-the-badge)
 
-**Finance & Grants** · **No backend. No login. Client data stays local.**
+**Finance & Grants** · **Optional backend. No login. Client data stays local. Standalone SaaS-ready.**
 
-[Live app](https://volta-npo.github.io/proposal-brief-builder/) · [Report an issue](https://github.com/volta-npo/proposal-brief-builder/issues) · [Volta](https://voltanpo.org)
+[Live app](https://volta-npo.github.io/13-proposal-brief-builder/) · [Report an issue](https://github.com/volta-npo/13-proposal-brief-builder/issues) · [Volta](https://voltanpo.org)
 
 </div>
 
@@ -174,6 +174,22 @@ This project now includes a backend-grade engine because the workflow benefits f
 
 ---
 
+## 💼 Standalone SaaS command center
+
+This release adds a SaaS-grade operating layer so **Proposal Brief Builder** can stand alone as more than a checklist. It models:
+
+- customer segments and jobs-to-be-done,
+- plan packaging and pricing tiers,
+- account/workspace cockpit fields,
+- operating KPIs with targets,
+- playbooks, automations, and integrations,
+- governance controls with evidence,
+- a phased roadmap for paid pilots and scale.
+
+Exports include an executive SaaS brief and an operations CSV for pilots, chapters, sponsors, and implementation teams.
+
+---
+
 ## 🏗️ Production infrastructure
 
 This repo is designed to be usable as a real OSS product, not just a static demo.
@@ -184,7 +200,7 @@ This repo is designed to be usable as a real OSS product, not just a static demo
 | Local runtime | Static app via `npm start` |
 | Container runtime | `Dockerfile`, `docker-compose.yml`, hardened Nginx config |
 | Developer environment | `.devcontainer/devcontainer.json` |
-| Operations | `Makefile`, `.env.example`, deployment docs, API docs |
+| Operations | `Makefile`, Docker Compose, deployment docs, API docs |
 | CI/CD | GitHub Actions CI, release artifact workflow, Dependabot |
 | Backend | Python HTTP evidence API |
 
@@ -193,7 +209,7 @@ This repo is designed to be usable as a real OSS product, not just a static demo
 ## 🛠️ Quick start
 
 ```bash
-git clone https://github.com/volta-npo/proposal-brief-builder.git
+git clone https://github.com/volta-npo/13-proposal-brief-builder.git
 cd 13-proposal-brief-builder
 npm install
 npm test
@@ -213,7 +229,7 @@ No install step is required for the app itself. Tests use Node's built-in test r
 
 ## 🧪 Validation
 
-This repository includes **25 automated tests** covering core scoring, domain behavior, v1 release behavior, and release certification.
+This repository includes **29 automated tests** covering core scoring, domain behavior, v1 release behavior, and release certification.
 
 ```bash
 npm test
@@ -230,6 +246,7 @@ Test coverage includes:
 - deterministic integrity hashes
 - blocked/critical gate prevention
 - markdown safety checks
+- SaaS packaging, metrics, governance, and roadmap readiness
 
 ---
 
@@ -244,7 +261,8 @@ Test coverage includes:
 │   ├── domain.js           # Domain-specific workbench definition
 │   ├── domain-core.js      # Domain calculations and artifacts
 │   ├── v1*.js              # v1 release layer
-│   └── release*.js         # release certification layer
+│   ├── v3*.js              # release certification layer
+│   └── saas*.js            # standalone SaaS command center
 ├── test/                   # 25 automated tests
 ├── docs/                   # Operations, QA, release checklist
 └── examples/               # Release bundle template

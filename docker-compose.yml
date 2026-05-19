@@ -4,8 +4,8 @@ services:
     image: volta-oss/proposal-brief-builder:local
     ports:
       - "4173:8080"
-    env_file:
-      - .env.example
+    environment:
+      VOLTA_LOG_LEVEL: info
     read_only: true
     tmpfs:
       - /tmp

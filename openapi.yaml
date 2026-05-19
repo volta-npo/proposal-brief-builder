@@ -1,8 +1,8 @@
 openapi: 3.1.0
 info:
   title: "Proposal Brief Builder API"
-  version: "1.0.0"
-  description: "Backend API for Turn messy discovery notes into a clean grant proposal brief before anyone writes prose."
+  version: "1.1.0"
+  description: "Optional backend API for Turn messy discovery notes into a clean grant proposal brief before anyone writes prose."
 servers:
   - url: http://127.0.0.1:8787
     description: Python backend
@@ -13,6 +13,10 @@ paths:
       responses:
         '200':
           description: Product identity and health status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
   /score:
     post:
       summary: Score evidence payload
@@ -21,8 +25,50 @@ paths:
         content:
           application/json:
             schema:
-              type: object
+              $ref: '#/components/schemas/EvidencePayload'
       responses:
         '200':
-          description: Release packet
- 
+          description: Release score, warnings, artifacts, and fingerprint
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScoreResponse'
+components:
+  schemas:
+    HealthResponse:
+      type: object
+      required: [ok, product, title]
+      properties:
+        ok:
+          type: boolean
+        product:
+          type: string
+        title:
+          type: string
+    EvidencePayload:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              label: { type: string }
+              score: { type: number, minimum: 0, maximum: 100 }
+              evidence: { type: string }
+              owner: { type: string }
+              approved: { type: boolean }
+    ScoreResponse:
+      type: object
+      properties:
+        product:
+          type: object
+        score:
+          type: object
+        artifacts:
+          type: array
+          items: { type: string }
+        release_hash:
+          type: string
+        fingerprint:
+          type: string

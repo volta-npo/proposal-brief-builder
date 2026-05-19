@@ -90,3 +90,17 @@ textarea { resize:vertical; }
 @media print{main::before{content:attr(data-print-title);display:block;font-size:1.4rem;font-weight:900;margin-bottom:1rem}.domain-tool,.v1,.v3{break-inside:avoid}.domain-layout,.v1-grid,.v3-grid{grid-template-columns:1fr}.table-wrap{overflow:visible}.domain-table,.v1-table{min-width:0}}
 @media(forced-colors:active){button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid ButtonText}.score-ring{border:2px solid ButtonText}}
 
+
+
+.saas-console { margin-top: 1rem; border: 2px solid color-mix(in srgb, var(--accent) 30%, white); }
+.saas-head { display:flex; justify-content:space-between; gap:1rem; align-items:flex-start; flex-wrap:wrap; }
+.saas-score { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; margin:1rem 0; }
+.saas-score article { border:1px solid var(--line); border-radius:1.25rem; padding:1rem; background:linear-gradient(135deg,#0f172a,color-mix(in srgb,var(--accent) 72%,#111827)); color:white; box-shadow:0 20px 50px rgba(15,23,42,.16); }
+.saas-score strong { display:block; font-size:2.1rem; letter-spacing:-.06em; }
+.saas-score span { display:block; font-weight:950; text-transform:uppercase; letter-spacing:.08em; font-size:.78rem; }
+.saas-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1rem; }
+.saas-cards { display:grid; gap:.75rem; }
+.saas-cards article { border:1px solid var(--line); border-radius:1.1rem; padding:1rem; background:rgba(255,255,255,.72); }
+.saas-cards article strong { display:block; margin-bottom:.3rem; }
+.saas-cards article span, .saas-cards article small { color:var(--muted); font-weight:800; }
+@media(max-width:900px){ .saas-score, .saas-grid { grid-template-columns:1fr; } }
