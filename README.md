@@ -10,9 +10,9 @@
 ![Tests](https://img.shields.io/badge/Tests-25%20passing-111827?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-f59e0b?style=for-the-badge)
 
-**Finance & Grants** · **Repo 13/50** · **No backend. No login. Client data stays local.**
+**Finance & Grants** · **No backend. No login. Client data stays local.**
 
-[Live app](https://volta-npo.github.io/13-proposal-brief-builder/) · [Report an issue](https://github.com/volta-npo/13-proposal-brief-builder/issues) · [Volta](https://voltanpo.org)
+[Live app](https://volta-npo.github.io/proposal-brief-builder/) · [Report an issue](https://github.com/volta-npo/proposal-brief-builder/issues) · [Volta](https://voltanpo.org)
 
 </div>
 
@@ -101,6 +101,16 @@ sequenceDiagram
 
 ---
 
+## 🟦 TypeScript-first
+
+This repository is authored in **TypeScript**. The checked-in JavaScript files are compiled artifacts so the project can run directly on GitHub Pages without a build server.
+
+- Source: `src/**/*.ts` and `test/**/*.ts`
+- Build: `npm run build`
+- Runtime artifacts: `src/**/*.js` for static hosting
+
+---
+
 ## 🚀 Features
 
 | Area | What ships in v3 |
@@ -154,12 +164,24 @@ sequenceDiagram
 
 ---
 
+## 🧠 Backend engine
+
+This project now includes a backend-grade engine because the workflow benefits from server-side validation, batch processing, or future API use.
+
+| Runtime | Path | Purpose | Test command |
+|---|---|---|---|
+| Python | `backend/python` | Evidence scoring, release packet generation, CLI/batch processing. | `npm run test:python` |
+
+---
+
 ## 🛠️ Quick start
 
 ```bash
-git clone https://github.com/volta-npo/13-proposal-brief-builder.git
+git clone https://github.com/volta-npo/proposal-brief-builder.git
 cd 13-proposal-brief-builder
+npm install
 npm test
+npm run test:backend
 npm start
 ```
 
