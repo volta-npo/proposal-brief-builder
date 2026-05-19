@@ -1,0 +1,28 @@
+openapi: 3.1.0
+info:
+  title: "Proposal Brief Builder API"
+  version: "1.0.0"
+  description: "Backend API for Turn messy discovery notes into a clean grant proposal brief before anyone writes prose."
+servers:
+  - url: http://127.0.0.1:8787
+    description: Python backend
+paths:
+  /health:
+    get:
+      summary: Health check
+      responses:
+        '200':
+          description: Product identity and health status
+  /score:
+    post:
+      summary: Score evidence payload
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Release packet
+ 
