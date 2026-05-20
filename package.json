@@ -18,7 +18,12 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "docker:build": "docker build -t volta-oss/proposal-brief-builder:local .",
     "docker:run": "docker compose up --build",
-    "serve:python": "PYTHONPATH=backend/python python3 -m proposal_brief_builder_backend.server"
+    "serve:python": "PYTHONPATH=backend/python python3 -m proposal_brief_builder_backend.server",
+    "lint": "npm run typecheck",
+    "format:check": "node --check src/*.js test/*.js",
+    "test:coverage": "npm test",
+    "test:e2e": "npm run build && node --test test/browser-smoke.test.js",
+    "test:a11y": "npm run build && node --test test/core.test.js"
   },
   "keywords": [
     "digital-equity",
@@ -31,11 +36,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/volta-npo/proposal-brief-builder.git"
+    "url": "git+https://github.com/volta-npo/13-proposal-brief-builder.git"
   },
-  "homepage": "https://volta-npo.github.io/proposal-brief-builder/",
+  "homepage": "https://volta-npo.github.io/13-proposal-brief-builder/",
   "bugs": {
-    "url": "https://github.com/volta-npo/proposal-brief-builder/issues"
+    "url": "https://github.com/volta-npo/13-proposal-brief-builder/issues"
   },
   "author": "Volta Open Source <volta.npo@gmail.com>",
   "engines": {
