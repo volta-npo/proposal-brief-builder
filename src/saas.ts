@@ -117,7 +117,7 @@ export const saas = {
       "stage": "Discovery intake",
       "moment": "Capture problem, population, program model, and evidence sources",
       "success": "Raw notes converted to structured facts",
-      "automation": "Guided intake prompts"
+      "automation": "Guided intake guidance"
     },
     {
       "stage": "Claim mapping",
@@ -236,7 +236,7 @@ export const saas = {
   ],
   "automations": [
     {
-      "name": "Evidence prompt generator",
+      "name": "Evidence request generator",
       "trigger": "New proposal section started",
       "action": "List missing sources and owner questions",
       "owner": "Proposal strategist"

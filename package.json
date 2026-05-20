@@ -36,11 +36,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/volta-npo/13-proposal-brief-builder.git"
+    "url": "git+https://github.com/volta-npo/proposal-brief-builder.git"
   },
-  "homepage": "https://volta-npo.github.io/13-proposal-brief-builder/",
+  "homepage": "https://volta-npo.github.io/proposal-brief-builder/",
   "bugs": {
-    "url": "https://github.com/volta-npo/13-proposal-brief-builder/issues"
+    "url": "https://github.com/volta-npo/proposal-brief-builder/issues"
   },
   "author": "Volta Open Source <volta.npo@gmail.com>",
   "engines": {
