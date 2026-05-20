@@ -14,6 +14,14 @@ export declare function createSaasWorkspace(saas: any, now?: string): {
     playbooks: any;
     controls: any;
     roadmap: any;
+    personas: any;
+    journeys: any;
+    features: any;
+    experiments: any;
+    risks: any;
+    automations: any;
+    dashboards: any;
+    templates: any;
 };
 export declare function calculateSaasReadiness(saas: any, workspace: any): {
     score: number;
@@ -22,8 +30,14 @@ export declare function calculateSaasReadiness(saas: any, workspace: any): {
     playbookScore: number;
     controlScore: number;
     roadmapScore: number;
+    featureScore: number;
+    riskScore: number;
+    automationScore: number;
     readyPlaybooks: any;
     verifiedControls: any;
+    liveFeatures: any;
+    mitigatedRisks: any;
+    enabledAutomations: any;
     warnings: any[];
 };
 export declare function saasWarnings(score: any, controlScore: any, workspace: any): any[];
@@ -42,6 +56,14 @@ export declare function applySaasSample(saas: any): {
     playbooks: any;
     controls: any;
     roadmap: any;
+    personas: any;
+    journeys: any;
+    features: any;
+    experiments: any;
+    risks: any;
+    automations: any;
+    dashboards: any;
+    templates: any;
 };
 export declare function buildSaasExecutiveBrief(config: any, saas: any, workspace: any): string;
 export declare function buildSaasCsv(workspace: any): string;
